@@ -1,56 +1,40 @@
 # Screenshot Guide - What to Capture at Each Stage
 
-Reference guide: check here before starting any step. General rule: **capture "before" and "after," not just the final result.**
+General rule: capture "before" and "after," not just the final result. If a screenshot doesn't show what happened before or how you knew it worked, take a second one that does.
 
----
+## Detection rules (3 per rule, most important category)
 
-## When building any detection rule - the most important and most repeated one
+1. The event happening - the command running, or Event Viewer showing the raw event
+2. The alert in the dashboard - rule ID and timestamp visible
+3. The rule itself - the XML, from terminal or editor
 
-For each of the 27 rules, you need 3 screenshots in order:
+## Installing a new component
 
-1. **The event happening** - example: the CMD window while you run the suspicious command, or Event Viewer showing the raw event before it reaches Wazuh.
-2. **The alert in the dashboard** - the Wazuh Dashboard page showing the alert, with the time and rule ID visible.
-3. **The rule itself** - if you edited or added an XML rule, capture the code (from the terminal or text editor).
+- Any error you hit (matters more than the success shot)
+- Final confirmation the service is running
 
-## When installing any new component (DC / App server / Client / Wazuh / Sysmon)
+## Troubleshooting
 
-- The **start of installation** (version selection, base settings)
-- Any **error message** you hit (even if you solved it) - this matters more than the success screenshot itself
-- The **final confirmation** that the service is running (`systemctl status` or the Windows equivalent)
+- The original error (full message)
+- The fix, and a clear before/after result
 
-## When solving a technical problem (Troubleshooting)
+## Network setup
 
-- The original error (full, clear error message on screen)
-- The command or check you used to diagnose it
-- The result after the fix (a clear "before" and "after" difference)
+- Final Virtual Network Editor settings
+- `ip a` / `ipconfig` after configuration
+- A successful `ping` between machines
 
-This type of screenshot matters most for the Decision Log - troubleshooting stories are some of the most valuable documentation in this project.
+## Registering an agent
 
-## When setting up the network
+- The "Deploy new agent" settings used
+- The Agents page showing it as Active
 
-- The **Virtual Network Editor** page (final settings after any change)
-- The result of `ip a` or `ipconfig` from each machine after configuration
-- A successful `ping` result between machines (proof the connection works)
+## Attack simulation
 
-## When registering a new agent
+- Each step, and the alert tied to it
+- Timeline view if the story spans multiple events
 
-- The "Deploy new agent" page in the dashboard (the settings you chose)
-- The command you ran on the machine itself
-- The **Agents** page in the dashboard showing the new machine as **Active**
-
-## When simulating an attack / insider threat scenario
-
-- Every step in the scenario (if it spans several days, capture each day separately)
-- The alerts tied to each step
-- If you linked more than one event into one story, capture the timeline view in the dashboard if available
-
----
-
-## A quick rule to remember
-
-**If the screenshot doesn't show "what happened before" or "how you knew it worked" - take a second screenshot that does.** One screenshot of the final result is not enough for good documentation.
-
-## File naming (organizing early saves time later)
+## File naming
 
 ```
 screenshots/
@@ -58,10 +42,9 @@ screenshots/
 ├── 02-dc/
 ├── 05-wazuh/
 ├── 06-sysmon/
-├── rules/
-│   ├── rule-01-admin-group-add/
-│   ├── rule-02-...
-└── troubleshooting/
+└── rules/
+    ├── rule-01-admin-group-add/
+    ├── rule-02-.../
 ```
 
-Each folder has its screenshots numbered simply (`01-before.png`, `02-alert.png`, `03-after.png`).
+Number screenshots simply within each folder (`01-before.png`, `02-alert.png`, `03-after.png`).
