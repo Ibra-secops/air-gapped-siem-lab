@@ -34,7 +34,7 @@ can't do on its own.
 | Log Source | Linux Audit Daemon (auditd), APP01 |
 | Event ID | N/A (auditd - no Windows/syslog Event ID) |
 | Wazuh Rule ID | 100022 (custom) |
-| Rule Description | Data exfiltration tool executed: $(audit.exe) by user $(audit.auid) |
+| Rule Description | `Data exfiltration tool executed: $(audit.exe) by user $(audit.auid)` |
 | Rule Level | 10 |
 | MITRE ATT&CK | T1048 - Exfiltration Over Alternative Protocol (contextual mapping - the rule detects tool execution, which does not by itself confirm exfiltration occurred) |
 | ECC Control | 2-7, 2-5-3-5 |
