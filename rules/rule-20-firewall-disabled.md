@@ -17,7 +17,7 @@ connections that would otherwise be blocked.
 | Log Source | Windows Security Event Log (WIN-CLIENT, via GPO) |
 | Event ID | 4950 (A Windows Firewall setting was changed) |
 | Wazuh Rule ID | 100018 (custom - `if_group: windows` + eventID=4950 filter) |
-| Rule Description | Windows Firewall setting changed - $(profileChanged) profile, $(settingType) = $(settingValue) |
+| Rule Description | `Windows Firewall setting changed - $(profileChanged) profile, $(settingType) = $(settingValue)` |
 | Rule Level | 10 |
 | MITRE ATT&CK | T1562.004 - Disable or Modify System Firewall (Defense Evasion) |
 | ECC Control | 2-3-3-1 |
